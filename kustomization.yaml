@@ -1,0 +1,9 @@
+namespace: kustom
+commonLabels:
+  app: example
+resources:
+  - deployment.yaml
+  - service.yaml
+  - ingress.yaml
+patches:
+- path: patch-replicacount.yaml
