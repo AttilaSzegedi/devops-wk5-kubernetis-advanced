@@ -1,0 +1,15 @@
+namespace: kustom-test
+resources:
+  - ../../base
+  - ingress.yaml
+images:
+- name: nginxdemos/hello
+  newName: nginx
+  newTag: 1.14.2
+patches:
+- path: patch-replicacount.yaml
+- path: patch-volume.yaml
+configMapGenerator:
+  - name: content
+    files:
+    - content/hello.txt
